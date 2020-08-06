@@ -30,14 +30,12 @@ class RollDice extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="roll-dice">
         <div className="dice-container">
           <Die face={this.state.die1} />
           <Die face={this.state.die2} />
         </div>
-        <button style={{ textAlign: center }} onClick={this.roll}>
-          Roll!
-        </button>
+        <button onClick={this.roll}>Roll!</button>
       </div>
     );
   }
