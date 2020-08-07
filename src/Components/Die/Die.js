@@ -5,7 +5,10 @@ class Die extends React.Component {
   render() {
     return (
       <div>
-        <i className={`die fas fa-dice-${this.props.face}`}></i>
+        <i
+          className={`die fas fa-dice-${this.props.face} ${
+            this.props.rolling && "animation"
+          }`}></i>
       </div>
     );
   }

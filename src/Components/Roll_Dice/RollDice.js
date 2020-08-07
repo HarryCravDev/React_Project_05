@@ -38,8 +38,8 @@ class RollDice extends React.Component {
     return (
       <div className="roll-dice">
         <div className="dice-container">
-          <Die face={this.state.die1} />
-          <Die face={this.state.die2} />
+          <Die face={this.state.die1} rolling={this.state.rolling} />
+          <Die face={this.state.die2} rolling={this.state.rolling} />
         </div>
         <button onClick={this.roll} disabled={this.state.rolling}>
           {this.state.rolling ? "Rolling..." : "Roll Dice!"}
