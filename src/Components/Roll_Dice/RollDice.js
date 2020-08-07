@@ -10,6 +10,7 @@ class RollDice extends React.Component {
   state = {
     die1: "one",
     die2: "one",
+    rolling: false,
   };
 
   roll = () => {
@@ -25,7 +26,12 @@ class RollDice extends React.Component {
     this.setState({
       die1: newDie1,
       die2: newDie2,
+      rolling: true,
     });
+
+    setTimeout(() => {
+      this.setState({ rolling: false });
+    }, 500);
   };
 
   render() {
@@ -35,7 +41,9 @@ class RollDice extends React.Component {
           <Die face={this.state.die1} />
           <Die face={this.state.die2} />
         </div>
-        <button onClick={this.roll}>Roll!</button>
+        <button onClick={this.roll} disabled={this.state.rolling}>
+          {this.state.rolling ? "Rolling..." : "Roll Dice!"}
+        </button>
       </div>
     );
   }
